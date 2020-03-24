@@ -51,16 +51,18 @@ let clicks = 0;
 let intervalId;
 
 $("h1").click(function () {
-  clearInterval(intervalId);
-  intervalLength /= 2;
-  clicks++;
-  console.log(intervalLength);
+    clearInterval(intervalId);
+    intervalLength /= 2;
+    clicks++;
+    console.log(intervalLength);
 
-  if (clicks > 10) {
-    $("h1").text("Вы победили!");
-    
-  } else {
-    intervalId = setInterval(moveElement, intervalLength);
-    $("h1").text(clicks);
-  }
+
+
+    if (clicks > 10) {
+        $("h1").text("Вы победили!");
+
+    } else {
+        intervalId = setInterval(moveElement, intervalLength);
+        $("h1").text(clicks);
+    }
 });
