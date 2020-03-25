@@ -23,6 +23,7 @@ let checkUnderscore = true;
 let countTry = 15;
 let checkWin = true;
 
+
 while (remainingLetters > 0 || checkUnderscore === true) {
     alert(answerArray.join(" "));
     let guess = prompt("Угадайте букву или нажмите 'Отмена' для выхода\n У вас есть 15 попыток ", "");
