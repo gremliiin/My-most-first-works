@@ -1,3 +1,5 @@
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
 let words = [
         "программа",
         "рустам",
@@ -22,9 +24,20 @@ let remainingLetters = word.length;
 let checkUnderscore = true;
 let countTry = 15;
 let checkWin = true;
+let countX = 50;
+let countY = 80;
 
+let drawAnswerArray = function (x, y) {
+    ctx.fillStyle = "Black";
+    ctx.font = "24px Courier";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "left";
+    ctx.fillText(answerArray.join(" "), x, y);
+};
 
-while (remainingLetters > 0 || checkUnderscore === true) {
+drawAnswerArray(50, 51);
+
+ while (remainingLetters > 0 || checkUnderscore === true) {
     alert(answerArray.join(" "));
     let guess = prompt("Угадайте букву или нажмите 'Отмена' для выхода\n У вас есть 15 попыток ", "");
 
@@ -39,6 +52,7 @@ while (remainingLetters > 0 || checkUnderscore === true) {
             if (word[i] === guess.toLowerCase()) {
                 answerArray[i] = guess.toLowerCase();
                 remainingLetters--;
+                
             }
 
         }
@@ -65,4 +79,6 @@ if (checkWin === true) {
     alert("Было загадано слово " + word);
 } else if (checkWin === false) {
     alert("Было загадано слово " + word);
-}
+} 
+
+drawAnswerArray(50, 50); 
