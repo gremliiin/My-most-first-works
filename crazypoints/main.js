@@ -9,10 +9,11 @@ let drawPoints = function (x, y) {
     ctx.fill();
 };
 
-$("#canvas").mousemove(function(event){
+$("#canvas").mousemove(function (event) {
     drawPoints((event.pageX - 180), event.pageY - 17);
 });
 
-$("#refresh").click(function(){
+
+$("#refresh").click(function () {
     location.reload();
 });
